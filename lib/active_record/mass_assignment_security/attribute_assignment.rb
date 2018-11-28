@@ -12,9 +12,7 @@ module ActiveRecord
 
         # The primary key and inheritance column can never be set by mass-assignment for security reasons.
         def attributes_protected_by_default
-          default = [ primary_key, inheritance_column ]
-          default << 'id' unless primary_key.eql? 'id'
-          default
+          [ 'id', inheritance_column ]
         end
       end
 
